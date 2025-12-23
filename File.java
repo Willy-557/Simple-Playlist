@@ -42,7 +42,32 @@ public class File {
                             break;
                         }
 
-                    
+                    case 2:
+                        System.out.println("\n-- Tambah Lagu --");
+
+                        for (String listPlaylist : spotifyMini.keySet()){
+                            System.out.println("- " + listPlaylist);
+                        }
+                        System.out.print("Mau masuk ke playlist mana?: ");
+                        String ambilPlaylist = scanner.nextLine();
+
+                        if (!spotifyMini.containsKey(ambilPlaylist)){
+                            System.out.println("Error! Playlist '" + ambilPlaylist + "' tidak ditemukan. Buat dulu di menu 1.");
+                        }
+                        else {
+                            System.out.print("Judul Lagu: ");
+                            String inputLagu = scanner.nextLine();
+
+                            if (spotifyMini.get(ambilPlaylist).contains(inputLagu)) {
+                                System.out.println("Error! Lagu '" + inputLagu + "' sudah ada di playlist ini.");
+                            }
+                            else {
+                                
+                            }
+                        }
+
+                        
+                        
                 
                     default:
                         break;

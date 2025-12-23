@@ -28,8 +28,20 @@ public class File {
             else {
                 switch (opsi) {
                     case 1:
-                        
-                        break;
+                        System.out.println("-- Menu Buat Playlist --");
+                        System.out.print("Nama Playlist: ");
+                        String namaPlaylist = scanner.nextLine();
+                        if (spotifyMini.containsKey(namaPlaylist)){
+                            System.out.println("Gagal! Playlist '"+ namaPlaylist + "' sudah ada sebelumnya.");
+                            break;
+                        }
+                        else {
+                            spotifyMini.put(namaPlaylist, new ArrayList<>());
+                            System.out.println("Berhasil! Playlist '" + namaPlaylist + "' telah dibuat.");
+                            break;
+                        }
+
+                    
                 
                     default:
                         break;

@@ -28,6 +28,8 @@ public class File {
             }
             else {
                 switch (opsi) {
+
+                    // Buat Playlist Baru
                     case 1:
                         System.out.println("\n-- Menu Buat Playlist --");
                         System.out.print("Nama Playlist: ");
@@ -41,7 +43,8 @@ public class File {
                             System.out.println("\nBerhasil! Playlist '" + namaPlaylist + "' telah dibuat.");
                             break;
                         }
-
+                    
+                    // Tambah Lagu ke Playlist
                     case 2:
                         System.out.println("\n-- Tambah Lagu --");
 
@@ -68,7 +71,8 @@ public class File {
                             }
                         }
                         break;
-
+                    
+                    // Putar Playlist
                     case 3:
                         System.out.println("\n-- Putar Playlist --");
 
@@ -93,6 +97,5 @@ public class File {
                 }
             }
         }
-
     }
 }

@@ -62,7 +62,8 @@ public class File {
                                 System.out.println("Error! Lagu '" + inputLagu + "' sudah ada di playlist ini.");
                             }
                             else {
-                                
+                                spotifyMini.get(ambilPlaylist).add(inputLagu);
+                                System.out.println("Lagu '" + inputLagu + "' berhasil ditambahkan ke 'Galau'!");
                             }
                         }
 

@@ -67,9 +67,10 @@ public class File {
                                 System.out.println("\nLagu '" + inputLagu + "' berhasil ditambahkan ke 'Galau'!");
                             }
                         }
+                        break;
 
                     case 3:
-                        System.out.println("-- Putar Playlist --");
+                        System.out.println("\n-- Putar Playlist --");
 
                         for (String listPlaylist : spotifyMini.keySet()){
                             System.out.println("- " + listPlaylist);
@@ -78,15 +79,17 @@ public class File {
                         System.out.print("\nNama playlist: ");
                         String cekPlaylist = scanner.nextLine();
 
-                        System.out.println("Sedang memutar '" + cekPlaylist + "'");
-                        int indexNomor = 1;
-                        for (String judulLagu : spotifyMini.get(cekPlaylist)) {
-                            System.out.println(indexNomor + ". " + judulLagu);
-                            indexNomor++;
+                        if (!spotifyMini.containsKey(cekPlaylist)){
+                            System.out.println("\nError! Playlist '" + cekPlaylist + "' tidak ditemukan. Buat dulu di menu 1.");
                         }
-                        
-                    default:
-                        break;
+                        else {
+                            System.out.println("\nSedang memutar '" + cekPlaylist + "'");
+                            int indexNomor = 1;
+                            for (String judulLagu : spotifyMini.get(cekPlaylist)) {
+                                System.out.println(indexNomor + ". " + judulLagu);
+                                indexNomor++;
+                            }
+                        }
                 }
             }
         }

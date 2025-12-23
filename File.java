@@ -26,7 +26,14 @@ public class File {
                 continue;
             }
             else {
+                switch (opsi) {
+                    case 1:
+                        
+                        break;
                 
+                    default:
+                        break;
+                }
             }
         }
 

@@ -14,7 +14,20 @@ public class File {
             System.out.println("3. Putar Playlist");
             System.out.println("4. Keluar");
 
-            
+            System.out.print("Pilih menu: ");
+            int opsi = scanner.nextInt();
+
+            if (opsi == 4) {
+                System.out.println("Terimakasih!");
+                break;
+            }
+            else if (opsi > 4 || opsi < 1) {
+                System.out.println("Input tidak valid");
+                continue;
+            }
+            else {
+                
+            }
         }
 
     }

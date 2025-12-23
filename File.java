@@ -67,7 +67,7 @@ public class File {
                             }
                             else {
                                 spotifyMini.get(ambilPlaylist).add(inputLagu);
-                                System.out.println("\nLagu '" + inputLagu + "' berhasil ditambahkan ke " + ambilPlaylist + "'!");
+                                System.out.println("\nLagu '" + inputLagu + "' berhasil ditambahkan ke '" + ambilPlaylist + "'!");
                             }
                         }
                         break;

@@ -80,16 +80,18 @@ public class File {
                             System.out.println("- " + listPlaylist);
                         }
 
-                        System.out.print("\nNama playlist: ");
+                        System.out.print("\nMasukkan nama playlist: ");
                         String cekPlaylist = scanner.nextLine();
 
                         if (!spotifyMini.containsKey(cekPlaylist)){
                             System.out.println("\nError! Playlist '" + cekPlaylist + "' tidak ditemukan. Buat dulu di menu 1.");
+                            break;
                         }
                         else {
                             ArrayList<String> cekLagu = spotifyMini.get(cekPlaylist);
                             if (cekLagu.isEmpty()){
-                                System.out.println("Belum ada lagu yang di-tambahkan ke playlist '" + cekPlaylist + "'.");
+                                System.out.println("\nBelum ada lagu yang di-tambahkan ke playlist '" + cekPlaylist + "'.");
+                                break;
                             }
                             else {
                                 System.out.println("\nSedang memutar '" + cekPlaylist + "'");
@@ -98,9 +100,8 @@ public class File {
                                     System.out.println(indexNomor + ". " + judulLagu);
                                     indexNomor++;
                                 }
-                            }
-
-                            
+                                break;
+                            }                            
                         }
                 }
             }

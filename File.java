@@ -48,28 +48,43 @@ public class File {
                         for (String listPlaylist : spotifyMini.keySet()){
                             System.out.println("- " + listPlaylist);
                         }
-                        System.out.print("Mau masuk ke playlist mana?: ");
+
+                        System.out.print("\nMau masuk ke playlist mana?: ");
                         String ambilPlaylist = scanner.nextLine();
 
                         if (!spotifyMini.containsKey(ambilPlaylist)){
-                            System.out.println("Error! Playlist '" + ambilPlaylist + "' tidak ditemukan. Buat dulu di menu 1.");
+                            System.out.println("\nError! Playlist '" + ambilPlaylist + "' tidak ditemukan. Buat dulu di menu 1.");
                         }
                         else {
-                            System.out.print("Judul Lagu: ");
+                            System.out.print("\nJudul Lagu: ");
                             String inputLagu = scanner.nextLine();
 
                             if (spotifyMini.get(ambilPlaylist).contains(inputLagu)) {
-                                System.out.println("Error! Lagu '" + inputLagu + "' sudah ada di playlist ini.");
+                                System.out.println("\nError! Lagu '" + inputLagu + "' sudah ada di playlist ini.");
                             }
                             else {
                                 spotifyMini.get(ambilPlaylist).add(inputLagu);
-                                System.out.println("Lagu '" + inputLagu + "' berhasil ditambahkan ke 'Galau'!");
+                                System.out.println("\nLagu '" + inputLagu + "' berhasil ditambahkan ke 'Galau'!");
                             }
                         }
 
+                    case 3:
+                        System.out.println("-- Putar Playlist --");
+
+                        for (String listPlaylist : spotifyMini.keySet()){
+                            System.out.println("- " + listPlaylist);
+                        }
+
+                        System.out.print("\nNama playlist: ");
+                        String cekPlaylist = scanner.nextLine();
+
+                        System.out.println("Sedang memutar '" + cekPlaylist + "'");
+                        int indexNomor = 1;
+                        for (String judulLagu : spotifyMini.get(cekPlaylist)) {
+                            System.out.println(indexNomor + ". " + judulLagu);
+                            indexNomor++;
+                        }
                         
-                        
-                
                     default:
                         break;
                 }

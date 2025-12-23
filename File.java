@@ -87,12 +87,20 @@ public class File {
                             System.out.println("\nError! Playlist '" + cekPlaylist + "' tidak ditemukan. Buat dulu di menu 1.");
                         }
                         else {
-                            System.out.println("\nSedang memutar '" + cekPlaylist + "'");
-                            int indexNomor = 1;
-                            for (String judulLagu : spotifyMini.get(cekPlaylist)) {
-                                System.out.println(indexNomor + ". " + judulLagu);
-                                indexNomor++;
+                            ArrayList<String> cekLagu = spotifyMini.get(cekPlaylist);
+                            if (cekLagu.isEmpty()){
+                                System.out.println("Belum ada lagu yang di-tambahkan ke playlist '" + cekPlaylist + "'.");
                             }
+                            else {
+                                System.out.println("\nSedang memutar '" + cekPlaylist + "'");
+                                int indexNomor = 1;
+                                for (String judulLagu : spotifyMini.get(cekPlaylist)) {
+                                    System.out.println(indexNomor + ". " + judulLagu);
+                                    indexNomor++;
+                                }
+                            }
+
+                            
                         }
                 }
             }
